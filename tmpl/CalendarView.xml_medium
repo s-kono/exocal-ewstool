@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:m="http://schemas.microsoft.com/exchange/services/2006/messages"
+               xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types"
+               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <t:RequestServerVersion Version="V2018_01_08" />
+  </soap:Header>
+  <soap:Body>
+    <m:FindItem Traversal="Shallow">
+      <m:ItemShape>
+        <t:BaseShape>IdOnly</t:BaseShape>
+        <t:AdditionalProperties>
+          <t:FieldURI FieldURI="item:DateTimeCreated" />
+          <t:FieldURI FieldURI="item:DisplayCc" />
+          <t:FieldURI FieldURI="item:DisplayTo" />
+          <t:FieldURI FieldURI="item:ItemId" />
+          <t:FieldURI FieldURI="item:LastModifiedTime" />
+          <t:FieldURI FieldURI="item:Preview" />
+          <t:FieldURI FieldURI="item:Sensitivity" />
+          <t:FieldURI FieldURI="item:Subject" />
+          <t:FieldURI FieldURI="calendar:End" />
+          <t:FieldURI FieldURI="calendar:IsAllDayEvent" />
+          <t:FieldURI FieldURI="calendar:LegacyFreeBusyStatus" />
+          <t:FieldURI FieldURI="calendar:Location" />
+          <t:FieldURI FieldURI="calendar:Organizer" />
+          <t:FieldURI FieldURI="calendar:Start" />
+        </t:AdditionalProperties>
+      </m:ItemShape>
+      <m:CalendarView MaxEntriesReturned="XX_MAX_ENTRIES_XX" StartDate="XX_START_DATE_XXT00:00:00+09:00" EndDate="XX_END_DATE_XXT23:59:00+00:00" />
+      <m:ParentFolderIds>
+        <t:DistinguishedFolderId Id="calendar">
+          <t:Mailbox>
+            <t:EmailAddress>XX_TARGET_ACCOUNT_XXXX_TARGET_DOMAIN_XX</t:EmailAddress>
+          </t:Mailbox>
+        </t:DistinguishedFolderId>
+      </m:ParentFolderIds>
+    </m:FindItem>
+  </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,39 @@
+#!/bin/bash
+set -u
+export LANG=ja_JP.UTF-8
+export LC_ALL=${LANG}
+export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+export PS4='+ [${BASH_SOURCE}:${LINENO}] ${FUNCNAME:+$FUNCNAME(): }'
+#
+BIN_DIRNAME=bin
+CONF_DIRNAME=conf
+TMP_DIRNAME=.tmp
+TMPLATE_DIRNAME=tmpl
+#
+TMP_BASEFILE=./${TMP_DIRNAME}/$$.
+INPUT_XML=${TMP_BASEFILE}input.xml
+OUTPUT_XML=${TMP_BASEFILE}output.xml
+RET_JSON=${TMP_BASEFILE}ret.json
+ITEMROOT_JSON=${TMP_BASEFILE}itemroot.json
+PROC_JSON=${TMP_BASEFILE}proc.json
+OUTPUT_JSON=${TMP_BASEFILE}output.json
+#
+CALENDARVIEW_XML=./${TMPLATE_DIRNAME}/CalendarView.xml
+#
+XM2JSON_SCRIPT=./xml2json/xml2json.rb
+NETRC_CONF=./${CONF_DIRNAME}/netrc_EWS
+#
+MAX_ENTRIES=100
+#DEF_DOMAIN=@example.jp
+DEF_DOMAIN=
+#CURL_PROXYOPT="-x proxy.example.jp:8080"
+CURL_PROXYOPT=
+#
+EWS_ENDPOINT=https://outlook.office365.com/EWS/Exchange.asmx
+BASE_CURL=(
+  curl -sSL --compressed --retry 1 --retry-delay 3 --max-time 10
+  -n --netrc-file ${NETRC_CONF}
+  -H "Content-Type:text/xml"
+  ${CURL_PROXYOPT}
+)
+EX_CURL=( "${BASE_CURL[@]}" ${EWS_ENDPOINT} )

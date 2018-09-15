@@ -1,0 +1,4 @@
+.tmp/
+bin/__pycache__/
+conf/netrc_EWS
+xml2json/
