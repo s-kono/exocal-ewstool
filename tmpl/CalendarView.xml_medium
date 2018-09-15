@@ -5,6 +5,9 @@
                xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
   <soap:Header>
     <t:RequestServerVersion Version="V2018_01_08" />
+    <t:TimeZoneContext>
+      <t:TimeZoneDefinition Name="(UTC+09:00) Osaka, Sapporo, Tokyo" Id="Tokyo Standard Time" />
+    </t:TimeZoneContext>
   </soap:Header>
   <soap:Body>
     <m:FindItem Traversal="Shallow">

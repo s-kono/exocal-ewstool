@@ -13,11 +13,18 @@ items = event_json['Items']['CalendarItem']
 def JSTnize(item_list):
     for key in item_list.keys():
         try:
+            """
             item_list[key] = (
               datetime.datetime.strptime(
                 item_list[key], "%Y-%m-%dT%H:%M:%SZ"
                                         ) + datetime.timedelta(hours=9)
                         ).strftime("%Y-%m-%d %H:%M (JST)")
+            """
+            item_list[key] = (
+              datetime.datetime.strptime(
+                item_list[key], "%Y-%m-%dT%H:%M:%S+09:00"
+                                        )
+                        ).strftime("%Y-%m-%d %H:%M")
         except TypeError:
             pass
         except ValueError:

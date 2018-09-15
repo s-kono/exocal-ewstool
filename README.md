@@ -43,6 +43,12 @@ CURL_PROXYOPT
 % ./bin/get-usercal.sh -f
 ```
 
+### get ServerTimeZones
+
+```sh
+% bash -c '. bin/SHELLSCRIPT_CONFIG; ${EX_CURL[@]} -d@tmpl/GetServerTimeZones.xml | xmllint --format -'
+```
+
 ## Reference
 
  * Exchange での認証と EWS | Microsoft Docs
