@@ -43,6 +43,15 @@ CURL_PROXYOPT
 % ./bin/get-usercal.sh -f
 ```
 
+### get RoomSchedule
+
+```sh
+create ./conf/room.json
+
+% ./bin/update-roomconf.sh
+% more ./conf/room.json
+```
+
 ### get ServerTimeZones
 
 ```sh

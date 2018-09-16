@@ -1,4 +1,5 @@
 .tmp/
 bin/__pycache__/
 conf/netrc_EWS
+conf/room.json
 xml2json/
