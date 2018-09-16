@@ -52,6 +52,14 @@ create ./conf/room.json
 % more ./conf/room.json
 ```
 
+```sh
+% ./bin/get-roomcal.sh -h
+%
+% ./bin/get-roomcal.sh -r "<RoomName>"
+% ./bin/get-roomcal.sh -r <RoomEmailAddress>
+% ./bin/get-roomcal.sh -r "<RoomName>" -s 1
+```
+
 ### get ServerTimeZones
 
 ```sh

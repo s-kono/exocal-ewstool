@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:m="http://schemas.microsoft.com/exchange/services/2006/messages"
+               xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types"
+               xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <t:RequestServerVersion Version="V2018_01_08" />
+    <t:TimeZoneContext>
+      <t:TimeZoneDefinition Name="(UTC+09:00) Osaka, Sapporo, Tokyo" Id="Tokyo Standard Time" />
+    </t:TimeZoneContext>
+  </soap:Header>
+  <soap:Body>
+    <m:GetUserAvailabilityRequest>
+      <m:MailboxDataArray>
+        <t:MailboxData>
+          <t:Email>
+            <t:Address>XX_TARGET_ROOM_XX</t:Address>
+          </t:Email>
+          <t:AttendeeType>Organizer</t:AttendeeType>
+          <t:ExcludeConflicts>false</t:ExcludeConflicts>
+        </t:MailboxData>
+      </m:MailboxDataArray>
+      <t:FreeBusyViewOptions>
+        <t:TimeWindow>
+          <t:StartTime>XX_START_DATE_XXT00:00:00+09:00</t:StartTime>
+          <t:EndTime>XX_END_DATE_XXT23:59:00+00:00</t:EndTime>
+        </t:TimeWindow>
+        <t:MergedFreeBusyIntervalInMinutes>5</t:MergedFreeBusyIntervalInMinutes>
+        <t:RequestedView>Detailed</t:RequestedView>
+      </t:FreeBusyViewOptions>
+    </m:GetUserAvailabilityRequest>
+  </soap:Body>
+</soap:Envelope>
