@@ -15,7 +15,7 @@ Today we are sharing our plans for the roadmap of Exchange Web Services (EWS)
 
 ```sh
 % git clone https://github.com/s-kono/exocal-ewstool.git ${REPO_DIR}
-% cd ${REPO_DIR}/
+% cd ${REPO_DIR:-exocal-ewstool}/
 % git clone https://github.com/s-kono/xml2json.git
 %
 % cat conf/netrc_EWS.sample
