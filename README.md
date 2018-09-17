@@ -60,6 +60,14 @@ create ./conf/room.json
 % ./bin/get-roomcal.sh -r "<RoomName>" -s 1
 ```
 
+### get CalendarItem
+
+```sh
+% ./bin/get-calitem.sh -h
+%
+% ./bin/get-calitem.sh -i "<Calendaritem_Id>" -k "<Calendaritem_ChangeKey>"
+```
+
 ### get ServerTimeZones
 
 ```sh
