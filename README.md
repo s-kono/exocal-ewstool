@@ -68,6 +68,16 @@ create ./conf/room.json
 % ./bin/get-calitem.sh -i "<Calendaritem_Id>" -k "<Calendaritem_ChangeKey>"
 ```
 
+### create CalendarItem
+
+```sh
+% ./bin/create-cal.sh -h
+%
+% ./bin/create-cal.sh -t Title -s "2020/01/01 15:00" -d -p
+% ./bin/create-cal.sh -t "Title hoge" -b "$( cat a.txt )" -s "11/03 23:15" -e "11/04 01:45"
+% ./bin/create-cal.sh -t "Title fuga" -s "12/21 22:00" -e 5 -o Organizer -u User1,User2 -r Room
+```
+
 ### get ServerTimeZones
 
 ```sh
