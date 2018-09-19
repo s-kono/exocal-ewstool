@@ -231,7 +231,7 @@ else
     "DateTimeCreated": .DateTimeCreated,
     "LastModifiedTime": .LastModifiedTime,
     "Organizer": .Organizer.Mailbox.Name,
-    "ItemId": .ItemId.Id,
+    "ItemId": .ItemId,
   }
         ' ${PROC_JSON}
 
