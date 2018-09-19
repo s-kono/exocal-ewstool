@@ -22,8 +22,10 @@
           <t:FieldURI FieldURI="item:Preview" />
           <t:FieldURI FieldURI="item:Sensitivity" />
           <t:FieldURI FieldURI="item:Subject" />
+          <t:FieldURI FieldURI="calendar:AppointmentState" />
           <t:FieldURI FieldURI="calendar:End" />
           <t:FieldURI FieldURI="calendar:IsAllDayEvent" />
+          <t:FieldURI FieldURI="calendar:IsCancelled" />
           <t:FieldURI FieldURI="calendar:LegacyFreeBusyStatus" />
           <t:FieldURI FieldURI="calendar:Location" />
           <t:FieldURI FieldURI="calendar:Organizer" />

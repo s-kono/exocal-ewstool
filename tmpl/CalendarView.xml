@@ -14,11 +14,11 @@
       <m:ItemShape>
         <t:BaseShape>IdOnly</t:BaseShape>
         <t:AdditionalProperties>
-          <t:FieldURI FieldURI="item:DisplayCc" />
-          <t:FieldURI FieldURI="item:DisplayTo" />
           <t:FieldURI FieldURI="item:Subject" />
+          <t:FieldURI FieldURI="calendar:AppointmentState" />
           <t:FieldURI FieldURI="calendar:End" />
           <t:FieldURI FieldURI="calendar:IsAllDayEvent" />
+          <t:FieldURI FieldURI="calendar:IsCancelled" />
           <t:FieldURI FieldURI="calendar:Location" />
           <t:FieldURI FieldURI="calendar:Start" />
         </t:AdditionalProperties>

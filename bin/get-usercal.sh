@@ -42,8 +42,11 @@ function func_usage() {
    [-f|-m|-b]
 
      -f: print processing_Full_json
+
      -m: print processing_Medium_json
-     -b: print processing_Brief_json (default)
+
+     -b: print processing_Brief_json [default]
+         (.IsCancelled = true な予定は除外)
 
    [-d]
        Dryrun
@@ -221,6 +224,7 @@ else
     "Location": .Location,
     "To": .DisplayTo,
     "Cc": .DisplayCc,
+    "IsCancelled": .IsCancelled,
     "Sensitivity": .Sensitivity,
     "Preview": .Preview,
     "LegacyFreeBusyStatus": .LegacyFreeBusyStatus,
@@ -233,17 +237,21 @@ else
 
     else
 
-        jq '
+        jq 'select(.IsCancelled == "false") |
   {
     "Start": .Start,
     "End": .End,
     "Subject": .Subject,
     "IsAllDayEvent": .IsAllDayEvent,
     "Location": .Location,
-    "To": .DisplayTo,
-    "Cc": .DisplayCc,
   }
-        ' ${PROC_JSON}
+        ' ${PROC_JSON} \
+        | sed 's/ "20[1-9][0-9]-/ "/' \
+        | jq -c 'to_entries
+  | [ .[]
+    | if .value == null then empty else . end
+    | if .value == "false" then empty else . end
+  ] | from_entries'
 
     fi
   )
