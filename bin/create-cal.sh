@@ -260,6 +260,8 @@ if [[ "${res_class}" != Success ]]; then
     fi
 fi
 
-jq '.Items.CalendarItem.ItemId' ${PROC_JSON}
+cat ${PROC_JSON} \
+| ${BIN_DIRNAME}/parse_json.py \
+| jq '.Items.CalendarItem.ItemId'
 
 exit

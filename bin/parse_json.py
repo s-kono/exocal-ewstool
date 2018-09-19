@@ -6,7 +6,10 @@ import json
 import sys
 
 event_json = json.load(sys.stdin, encoding='utf-8')
-event_json['TotalItemsInView'] = int(event_json['TotalItemsInView'])
+try:
+    event_json['TotalItemsInView'] = int(event_json['TotalItemsInView'])
+except KeyError:
+    pass
 items = event_json['Items']['CalendarItem']
 
 viewurl = (
