@@ -10,6 +10,7 @@ Today we are sharing our plans for the roadmap of Exchange Web Services (EWS)
 ---
 
  * 要 jq, xmllint
+ * JST 前提
 
 ## init
 
