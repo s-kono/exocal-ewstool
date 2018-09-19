@@ -74,14 +74,14 @@ create ./conf/room.json
 % ./bin/create-cal.sh -h
 %
 % ./bin/create-cal.sh -t Title -s "2020/01/01 15:00" -d -p
-% ./bin/create-cal.sh -t "Title hoge" -b "$( cat a.txt )" -s "11/03 23:15" -e "11/04 01:45"
+% ./bin/create-cal.sh -t "Title hoge" -b "$( cat description.txt )" -s "11/03 23:15" -e "11/04 01:45"
 % ./bin/create-cal.sh -t "Title fuga" -s "12/21 22:00" -e 5 -o Organizer -u User1,User2 -r Room
 ```
 
 ### get ServerTimeZones
 
 ```sh
-% bash -c '. bin/SHELLSCRIPT_CONFIG; ${EX_CURL[@]} -d@tmpl/GetServerTimeZones.xml | xmllint --format -'
+% bash -c '. bin/SHELLSCRIPT_CONFIG; ${EX_CURL[@]} -d@tmpl/GetServerTimeZones.xml' | xmllint --format -
 ```
 
 ## Reference
