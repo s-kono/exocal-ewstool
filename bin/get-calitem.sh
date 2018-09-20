@@ -33,11 +33,10 @@ function func_usage() {
 
   =================================================
 
-   [-f|-m|-b]
+   [-f|-m]
 
      -f: print processing_Full_json
-     -m: print processing_Medium_json
-     -b: print processing_Brief_json (default)
+     -m: print processing_Medium_json [default]
 
    [-d]
        Dryrun
@@ -62,14 +61,13 @@ arg_flag_print_postxml=0
 arg_flag_print_outjson=0
 arg_flag_print_outxml=0
 arg_flag_print_procfulljson=0
-arg_flag_print_procmediumjson=0
-arg_flag_print_procbriefjson=1
+arg_flag_print_procmediumjson=1
 arg_flag_verbose=0
 arg_calendarid=
 arg_calendarkey=
 while getopts "bdfhi:jk:mpvx" arg; do
   case ${arg} in
-    b) arg_flag_print_procbriefjson=1;;
+    b) :;;
     d) arg_flag_dryrun=1;;
     f) arg_flag_print_procfulljson=1;;
     h) func_usage; exit 0;;
@@ -145,12 +143,16 @@ if [[ "${res_class}" != Success ]]; then
 fi
 
 if [[ ${arg_flag_print_procfulljson} -eq 1 ]]; then
-        jq '.Items.CalendarItem' ${PROC_JSON}
-else
-  (
-    if [[ ${arg_flag_print_procmediumjson} -eq 1 ]]; then
 
-        jq '.Items.CalendarItem |
+    cat ${PROC_JSON} \
+    | ${BIN_DIRNAME}/parse_json.py \
+    | jq '.Items.CalendarItem'
+
+else
+
+    cat ${PROC_JSON} \
+    | ${BIN_DIRNAME}/parse_json.py \
+    | jq '.Items.CalendarItem |
   {
     "Start": .Start,
     "End": .End,
@@ -159,36 +161,19 @@ else
     "Location": .Location,
     "To": .DisplayTo,
     "Cc": .DisplayCc,
+    "IsCancelled": .IsCancelled,
     "Sensitivity": .Sensitivity,
     "Preview": .Preview,
     "LegacyFreeBusyStatus": .LegacyFreeBusyStatus,
     "DateTimeCreated": .DateTimeCreated,
     "LastModifiedTime": .LastModifiedTime,
     "Organizer": .Organizer.Mailbox.Name,
-    "ItemId": .ItemId.Id,
-    "HasAttachments": .HasAttachments,
-    "IsCancelled": .IsCancelled,
+    "ItemId": .ItemId,
     "ConflictingMeetingCount": .ConflictingMeetingCount,
     "ConflictingMeetings": .ConflictingMeetings,
   }
-        ' ${PROC_JSON}
+    '
 
-    else
-
-        jq '.Items.CalendarItem |
-  {
-    "Start": .Start,
-    "End": .End,
-    "Subject": .Subject,
-    "IsAllDayEvent": .IsAllDayEvent,
-    "Location": .Location,
-    "To": .DisplayTo,
-    "Cc": .DisplayCc,
-  }
-        ' ${PROC_JSON}
-
-    fi
-  )
 fi
 
 exit
