@@ -27,8 +27,8 @@ CREATEITEM_FIRST_XML=./${TMPLATE_DIRNAME}/CreateItem.xml_first
 CREATEITEM_LAST_XML=./${TMPLATE_DIRNAME}/CreateItem.xml_last
 #
 XM2JSON_SCRIPT=./xml2json/xml2json.rb
-ESCAPE_SCRIPT=./${BIN_DIRNAME}/htmlescape.py
-#ESCAPE_SCRIPT=./${BIN_DIRNAME}/htmlescape.py3
+ESCAPE_SCRIPT=./${BIN_DIRNAME}/escape_html.py
+#ESCAPE_SCRIPT=./${BIN_DIRNAME}/escape_html.py3
 NETRC_CONF=./${CONF_DIRNAME}/netrc_EWS
 ROOM_CONF=./${CONF_DIRNAME}/room.json
 #
