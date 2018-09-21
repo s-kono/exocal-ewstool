@@ -27,6 +27,7 @@ machine outlook.office365.com login Your.Account@YourDomain.example.jp password 
 % vi bin/SHELLSCRIPT_CONFIG
 DEF_DOMAIN
 CURL_PROXYOPT
+REGISTERABLE_START_SHIFTDAYS
 ```
 
 ## Example
@@ -77,6 +78,18 @@ create ./conf/room.json
 % ./bin/create-cal.sh -t Title -s "2020/01/01 15:00" -d -p
 % ./bin/create-cal.sh -t "Title hoge" -b "$( cat description.txt )" -s "11/03 23:15" -e "11/04 01:45"
 % ./bin/create-cal.sh -t "Title fuga" -s "12/21 22:00" -e 5 -o Organizer -u User1,User2 -r Room
+```
+
+### register WeeklyEvent
+
+```sh
+% cat conf/weeklyevent.list.sample
+% vi conf/weeklyevent.list
+```
+
+```
+## sample crontab
+01  09  *  *  *  /path.to.dir/bin/register_weeklyevent.sh -v
 ```
 
 ### get ServerTimeZones

@@ -1,0 +1,4 @@
+#(delimiter is TAB only)
+#day-of-the-week	TITLE	ORGANIZER	USER[,USER...]	ROOM[,ROOM...]	START_TIME(HH:MM)	END_TIME(HH:MM)	[BODY(1_line)]
+#Thu	SampleA	User1	-	-	16:00	17:00	https://www.example.jp/sampleA.html
+#Fri	SampleB@Room8,Fixtures5	User20	User1,User2	Room8,Fixtures5	14:00	15:00	-
