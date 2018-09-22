@@ -176,9 +176,11 @@ if [[ ${arg_flag_print_outjson} -eq 1 ]] || [[ ${arg_flag_verbose} -eq 1 ]]; the
     echo >&2
 fi
 
-res_class=$( jq -r '.Envelope.Body.FindItemResponse.ResponseMessages.FindItemResponseMessage.ResponseClass' ${RET_JSON} )
+jq '.Envelope.Body.FindItemResponse.ResponseMessages.FindItemResponseMessage' ${RET_JSON} > ${EXTRACTED_JSON}
+
+res_class=$( jq -r '.ResponseClass' ${EXTRACTED_JSON} )
 if [[ "${res_class}" != Success ]]; then
-    res_faultmsg=$( jq -r '.Envelope.Body.Fault.detail.Message' ${RET_JSON} )
+    res_faultmsg=$( jq -r '.MessageText' ${EXTRACTED_JSON} )
     if [[ -z "${res_faultmsg}" ]]; then
         echo >&2 "err: Unknown Error"
         exit 7
@@ -188,8 +190,7 @@ if [[ "${res_class}" != Success ]]; then
     fi
 fi
 
-jq '.Envelope.Body.FindItemResponse.ResponseMessages.FindItemResponseMessage.RootFolder' ${RET_JSON} \
-> ${ITEMROOT_JSON}
+jq '.RootFolder' ${EXTRACTED_JSON} > ${ITEMROOT_JSON}
 
 if [[ $( jq -r '.TotalItemsInView' ${ITEMROOT_JSON} ) -eq 0 ]]; then
     [[ ${arg_flag_print_quiet} -eq 0 ]] && jq . ${ITEMROOT_JSON}

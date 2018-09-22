@@ -246,11 +246,11 @@ if [[ ${arg_flag_print_outjson} -eq 1 ]] || [[ ${arg_flag_verbose} -eq 1 ]]; the
     echo >&2
 fi
 
-jq '.Envelope.Body.CreateItemResponse.ResponseMessages.CreateItemResponseMessage' ${RET_JSON} > ${PROC_JSON}
+jq '.Envelope.Body.CreateItemResponse.ResponseMessages.CreateItemResponseMessage' ${RET_JSON} > ${EXTRACTED_JSON}
 
-res_class=$( jq -r '.ResponseClass' ${PROC_JSON} )
+res_class=$( jq -r '.ResponseClass' ${EXTRACTED_JSON} )
 if [[ "${res_class}" != Success ]]; then
-    res_faultmsg=$( jq -r '.MessageText' ${PROC_JSON} )
+    res_faultmsg=$( jq -r '.MessageText' ${EXTRACTED_JSON} )
     if [[ -z "${res_faultmsg}" ]]; then
         echo >&2 "err: Unknown Error"
         exit 7
@@ -260,7 +260,7 @@ if [[ "${res_class}" != Success ]]; then
     fi
 fi
 
-cat ${PROC_JSON} \
+cat ${EXTRACTED_JSON} \
 | ${BIN_DIRNAME}/parse_json.py \
 | jq '.Items.CalendarItem.ItemId'
 
