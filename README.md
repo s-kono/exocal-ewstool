@@ -19,15 +19,19 @@ Today we are sharing our plans for the roadmap of Exchange Web Services (EWS)
 % cd ${REPO_DIR:-exocal-ewstool}/
 % git clone https://github.com/s-kono/xml2json.git
 %
+% chmod 700 .tmp/
+%
 % cat conf/netrc_EWS.sample
 machine outlook.office365.com login Your.Account@YourDomain.example.jp password Your.Pass.word
 %
-% vi  conf/netrc_EWS
+% install -m 600 conf/netrc_EWS{.sample,}
+% vi conf/netrc_EWS
 %
 % vi bin/SHELLSCRIPT_CONFIG
-DEF_DOMAIN
-CURL_PROXYOPT
-REGISTERABLE_START_SHIFTDAYS
+### Edit as necessary
+DEF_DOMAIN=
+CURL_PROXYOPT=
+REGISTERABLE_START_SHIFTDAYS=
 ```
 
 ## Example
