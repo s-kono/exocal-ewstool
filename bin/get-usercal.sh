@@ -247,7 +247,7 @@ else
     "Location": .Location,
   }
         ' ${PROC_JSON} \
-        | sed 's/ "20[1-9][0-9]-/ "/' \
+        | sed 's% "20[1-9][0-9]-\([01][0-9]\)-\([0-3][0-9] \)% "\1/\2%' \
         | jq -c 'to_entries
   | [ .[]
     | if .value == null then empty else . end
