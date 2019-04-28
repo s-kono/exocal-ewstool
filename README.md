@@ -102,6 +102,12 @@ create ./conf/room.json
 % bash -c '. bin/SHELLSCRIPT_CONFIG; ${EX_CURL[@]} -d@tmpl/GetServerTimeZones.xml' | xmllint --format -
 ```
 
+### ConvertId HexEntryId=>EwsId
+
+```sh
+% ./bin/get-convertid-hex2ews.sh -f -i 000000007....
+```
+
 ## Reference
 
  * Exchange での認証と EWS | Microsoft Docs
@@ -151,4 +157,9 @@ create ./conf/room.json
 
  * Property sets and response shapes in EWS in Exchange | Microsoft Docs
    * https://docs.microsoft.com/en-us/exchange/client-developer/exchange-web-services/property-sets-and-response-shapes-in-ews-in-exchange
+
+ * ConvertId Operation | Microsoft Docs
+   * https://docs.microsoft.com/en-us/previous-versions/office/developer/exchange-server-2010/bb799665(v=exchg.140)
+ * IdFormatType Enum (ExchangeWebServices) | Microsoft Docs
+   * https://docs.microsoft.com/en-us/dotnet/api/exchangewebservices.idformattype?view=exchange-ews-proxy
 

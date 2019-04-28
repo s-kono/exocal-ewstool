@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types">
+  <soap:Header>
+    <t:RequestServerVersion Version="V2018_01_08" />
+  </soap:Header>
+  <soap:Body>
+    <ConvertId xmlns="http://schemas.microsoft.com/exchange/services/2006/messages"
+               xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types"
+               DestinationFormat="EwsId">
+      <SourceIds>
+        <t:AlternateId Format="HexEntryId" Id="XXX_Id_XXX"
+                       Mailbox="XXX_ORGANIZER_XXX"/>
+      </SourceIds>
+    </ConvertId>
+  </soap:Body>
+</soap:Envelope>
