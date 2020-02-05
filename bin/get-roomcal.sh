@@ -112,6 +112,7 @@ fi
 
 if [[ -z "${room_addr}" ]] || [[ -z "${room_name}" ]]; then
     echo >&2 "err: [room_addr:${room_addr}], [room_name:${room_name}]"
+    grep "${arg_room}" ${ROOM_CONF} | sed 's/,$//' >&2
     exit 9
 fi
 
