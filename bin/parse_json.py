@@ -14,7 +14,7 @@ items = event_json['Items']['CalendarItem']
 
 viewurl = (
   "https://outlook.office365.com"
-  "/owa/?viewmodel=ICalendarItemDetailsViewModelFactory&ItemID="
+  "/owa/?exvsurl=1&path=/calendar/item&itemid="
 )
 
 
