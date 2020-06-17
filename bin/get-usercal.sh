@@ -199,11 +199,11 @@ fi
 
 if [[ ${arg_flag_print_procfulljson} -eq 1 ]]; then
     cat ${ITEMROOT_JSON} \
-    | ${BIN_DIRNAME}/parse_json.py \
+    | ${PARSE_SCRIPT} \
     | jq .
 else
     cat ${ITEMROOT_JSON} \
-    | ${BIN_DIRNAME}/parse_json.py \
+    | ${PARSE_SCRIPT} \
     | jq '
   if .TotalItemsInView > 1 then
     .Items.CalendarItem[]

@@ -261,7 +261,7 @@ if [[ "${res_class}" != Success ]]; then
 fi
 
 cat ${EXTRACTED_JSON} \
-| ${BIN_DIRNAME}/parse_json.py \
+| ${PARSE_SCRIPT} \
 | jq '.Items.CalendarItem.ItemId'
 
 exit

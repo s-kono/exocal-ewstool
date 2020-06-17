@@ -144,13 +144,13 @@ fi
 if [[ ${arg_flag_print_procfulljson} -eq 1 ]]; then
 
     cat ${EXTRACTED_JSON} \
-    | ${BIN_DIRNAME}/parse_json.py \
+    | ${PARSE_SCRIPT} \
     | jq '.Items.CalendarItem'
 
 else
 
     cat ${EXTRACTED_JSON} \
-    | ${BIN_DIRNAME}/parse_json.py \
+    | ${PARSE_SCRIPT} \
     | jq '.Items.CalendarItem |
   {
     "Start": .Start,
