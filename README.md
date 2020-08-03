@@ -7,6 +7,16 @@ Today we are sharing our plans for the roadmap of Exchange Web Services (EWS)
  and the planned deprecation of Basic Auth access for EWS in October 13th, 2020.
 ```
 
+ * Basic Authentication and Exchange Online : April 2020 Update
+   * https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-april-2020-update/ba-p/1275508
+ * Basic Authentication and Exchange Online : July Update
+   * https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-july-update/ba-p/1530163#bodyDisplay:~:text=planning%20to%20disable%20Basic%20Authentication%20for,in%20the%20second%20half%20of%202021
+```
+Authentication Policies:
+  ... the Exchange Team is planning to disable Basic Authentication for the EAS, EWS, POP, IMAP, and RPS protocols in the second half of 2021.
+  ... we plan to begin disabling Basic Authentication in existing tenants with no recorded usage as early as October 2020.
+```
+
 ---
 
  * 要 jq, xmllint
