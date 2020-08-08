@@ -19,7 +19,11 @@ Authentication Policies:
 
 ---
 
- * 要 jq, xmllint
+ * 要
+   * python3
+     * xmljson (pip3 install xmljson)
+   * jq
+   * xmllint
  * JST 前提
 
 ## init
@@ -27,7 +31,6 @@ Authentication Policies:
 ```sh
 % git clone https://github.com/s-kono/exocal-ewstool.git ${REPO_DIR}
 % cd ${REPO_DIR:-exocal-ewstool}/
-% git clone https://github.com/s-kono/xml2json.git
 %
 % chmod 700 .tmp/
 %

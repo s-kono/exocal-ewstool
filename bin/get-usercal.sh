@@ -168,7 +168,7 @@ if [[ ${arg_flag_verbose} -eq 1 ]]; then
     echo >&2
 fi
 
-cat ${OUTPUT_XML} | ${XM2JSON_SCRIPT} > ${RET_JSON}
+python3 -m xmljson -d yahoo ${OUTPUT_XML} | sed 's%{http.*}%%' > ${RET_JSON}
 
 if [[ ${arg_flag_print_outjson} -eq 1 ]] || [[ ${arg_flag_verbose} -eq 1 ]]; then
     echo >&2 "debug: print Output_JSON"

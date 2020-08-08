@@ -14,7 +14,7 @@ cd ${MY_DIR}/../ || exit $?
 trap 'rm -f ${TMP_BASEFILE:-XX_NULL_XX}*' 0 1 2 3 15
 
 "${EX_CURL[@]}" -d@${GETROOMLIST_XML} -o ${OUTPUT_XML}
-cat ${OUTPUT_XML} | ${XM2JSON_SCRIPT} > ${RET_JSON}
+python3 -m xmljson -d yahoo ${OUTPUT_XML} | sed 's%{http.*}%%' > ${RET_JSON}
 
 res_class=$( jq -r '.Envelope.Body.GetRoomListsResponse.ResponseClass' ${RET_JSON} )
 if [[ "${res_class}" != Success ]]; then
@@ -39,7 +39,7 @@ while read roomList_Address roomList_Name; do
     ret_json=${RET_JSON}_rooms
 
     "${EX_CURL[@]}" -d"$( sed 's/XX_EMAIL_ADDRESS_XX/'${roomList_Address}'/' ${GETROOMS_XML} )" -o ${ret_xml}
-    cat ${ret_xml} | ${XM2JSON_SCRIPT} > ${ret_json}
+    python3 -m xmljson -d yahoo ${ret_xml} | sed 's%{http.*}%%' > ${ret_json}
 
     res_class=$( jq -r '.Envelope.Body.GetRoomsResponse.ResponseClass' ${ret_json} )
     if [[ "${res_class}" != Success ]]; then
