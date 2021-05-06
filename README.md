@@ -17,6 +17,9 @@ Authentication Policies:
   ... we plan to begin disabling Basic Authentication in existing tenants with no recorded usage as early as October 2020.
 ```
 
+ * Basic Authentication and Exchange Online : February 2021 Update
+   * https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-february-2021-update/ba-p/2111904
+
 ---
 
  * 要
