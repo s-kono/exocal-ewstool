@@ -14,8 +14,15 @@ items = event_json['Items']['CalendarItem']
 
 viewurl = (
   "https://outlook.office365.com"
+  "/calendar/item/"
+)
+viewurl_old = (
+  "https://outlook.office365.com"
   "/owa/?exvsurl=1&path=/calendar/item&itemid="
 )
+# https://docs.microsoft.com/en-us/graph/api/resources/event?view=graph-rest-1.0
+#  For work or school accounts: outlook.office365.com
+#  For Microsoft accounts: outlook.live.com
 
 
 def JSTnize(item_list):
@@ -52,6 +59,7 @@ def addItemURL(item_list):
           '/', '%2F'
         )
         item_list[key]["ViewURL"] = viewurl + encode_itemid
+        item_list[key]["ViewURL_old"] = viewurl_old + encode_itemid
 
 
 def main():
