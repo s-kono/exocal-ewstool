@@ -1,15 +1,16 @@
 # Test calendar-tool for Exchange Online EWS (BasicAuth)
 
- * Upcoming changes to Exchange Web Services (EWS) API for Office 365 - Office 365 Developer Blog
+ * Upcoming changes to Exchange Web Services (EWS) API for Office 365 - Office 365 Developer Blog [2018-07-19]
    * https://developer.microsoft.com/en-us/graph/blogs/upcoming-changes-to-exchange-web-services-ews-api-for-office-365/
 ```
 Today we are sharing our plans for the roadmap of Exchange Web Services (EWS)
  and the planned deprecation of Basic Auth access for EWS in October 13th, 2020.
 ```
 
- * Basic Authentication and Exchange Online : April 2020 Update
+ * Basic Authentication and Exchange Online : April 2020 Update [2020-04-03]
    * https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-april-2020-update/ba-p/1275508
- * Basic Authentication and Exchange Online : July Update
+
+ * Basic Authentication and Exchange Online : July Update - Microsoft Tech Community - 1530163 [2020-07-28]
    * https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-july-update/ba-p/1530163#bodyDisplay:~:text=planning%20to%20disable%20Basic%20Authentication%20for,in%20the%20second%20half%20of%202021
 ```
 Authentication Policies:
@@ -17,8 +18,14 @@ Authentication Policies:
   ... we plan to begin disabling Basic Authentication in existing tenants with no recorded usage as early as October 2020.
 ```
 
- * Basic Authentication and Exchange Online : February 2021 Update
+ * Basic Authentication and Exchange Online - February 2021 Update - Microsoft Tech Community [2021-02-04]
    * https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-february-2021-update/ba-p/2111904
+```
+The first change is that until further notice, we will not be disabling Basic Auth for any protocols that your tenant is using. When we resume this program, we will provide a minimum of twelve months notice before we block the use of Basic Auth on any protocol being used in your tenant.
+
+We will continue with our plan to disable Basic Auth for protocols that your tenant is not using. …
+```
+
 
 ---
 
