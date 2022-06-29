@@ -26,6 +26,23 @@ The first change is that until further notice, we will not be disabling Basic Au
 We will continue with our plan to disable Basic Auth for protocols that your tenant is not using. …
 ```
 
+ * Basic Authentication and Exchange Online - September 2021 Update [2021-09-23]
+   * https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-september-2021-update/ba-p/2772210
+```
+Today, we are announcing that, effective October 1, 2022, we will begin to permanently disable Basic Auth in all tenants, regardless of usage, with the exception of SMTP Auth.
+```
+```
+IMPORTANT: Sometime in second quarter of 2022 we will selectively pick tenants and disable Basic Auth for all affected protocols except SMTP AUTH for a period of 12-48 hours. After this time, Basic Auth for these protocols will be re-enabled, if the tenant admin has not already re-enabled them using our self-service tools.
+```
+
+ * Basic Authentication Deprecation in Exchange Online - May 2022 Update
+   * https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-deprecation-in-exchange-online-may-2022/ba-p/3301866
+```
+we will start to turn off Basic Authentication in our worldwide multi-tenant service on October 1, 2022. To be clear, we will start on October 1; this is not the date we turn it off for everyone. We will randomly select tenants, send 7-day warning Message Center posts (and post Service Health Dashboard notices), then we will turn off Basic Auth in the tenant. We expect to complete this by the end of this year.
+```
+```
+There is no way to request an exception after October. Tenant selection is random, and we cannot put your tenant to the back of the queue to give you more time or change your settings on any specific date.
+```
 
 ---
 
